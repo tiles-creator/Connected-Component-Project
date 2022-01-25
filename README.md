@@ -18,7 +18,7 @@
  Input file information:
  The bitmap file to be analyzed will have the following format:\
      - The first line of the file is the number n, which specifies the n x n size of the bitmap.  
-     - The next n lines will have n elements that will be either zeros or ones separated by a space. 
+     - The next n lines will have n elements that will be either zeros or ones separated by a space.   
      - The zeros represent white pixels, the ones represent black pixels. 
   
  Here is an example input file for a 5x5 bitmap.\
