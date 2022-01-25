@@ -1,6 +1,5 @@
 # Connected-Component-Project
- README file for Programming Project 1
- 
+  
  @author:  Teresa Iles
  COSC 3304 Algorithm Design and Analysis
  Instructor:  Dr. Lawrence Osborne
@@ -17,18 +16,18 @@
  In.java, StdIn.java, StdOut.java, WeightedQuickUnionUF.java
  
  Input file information:
- The bitmap file to be analyzed will have the following format:
-     - The first line of the file is the number n, which specifies the n x n size of the bitmap.  
-     - The next n lines will have n elements that will be either zeros or ones separated by a space.  
-     - The zeros represent white pixels, the ones represent black pixels. 
+ The bitmap file to be analyzed will have the following format:\
+     - The first line of the file is the number n, which specifies the n x n size of the bitmap.\  
+     - The next n lines will have n elements that will be either zeros or ones separated by a space. \ 
+     - The zeros represent white pixels, the ones represent black pixels. \
   
- Here is an example input file for a 5x5 bitmap.
- 5
- 1 1 0 0 1  
- 0 0 1 1 1
- 1 0 1 1 0
- 0 1 0 1 1
- 0 0 0 0 1
+ Here is an example input file for a 5x5 bitmap.\
+ 5\
+ 1 1 0 0 1\
+ 0 0 1 1 1\
+ 1 0 1 1 0\
+ 0 1 0 1 1\
+ 0 0 0 0 1\
   
  The following files will be provided to test the program:
    - bitmapTest1.bmp
@@ -36,29 +35,28 @@
    - bitmapTest3.bmp
  
  Expected output:
- The program will print to the console the line:  "
- The size of the largest connected component of black pixels is: __" 
- with the appropriate number instead of the empty blank.  
- The program can handle the case of zero black pixels and will print:
- "There are no black pixels. The size of the largest connected component of black pixels is: 0"
- Note: When I was testing the program, I had it print the bitmap and the number of components.  I have 
+ The program will print to the console the line:  "\
+ The size of the largest connected component of black pixels is: " \
+ with the appropriate number instead of the empty blank.\ 
+ The program can handle the case of zero black pixels and will print:\
+ "There are no black pixels. The size of the largest connected component of black pixels is: 0"\
+ Note: When I was testing the program, I had it print the bitmap and the number of components.  I have \
  decided to leave these lines in the program, but they are commented out.
  
  How to run this program:
- Using Dr. Java, open my program file MaxConnectedBlackPixels.java.  
- Additionally, load the WeightedQuickUnionUF.java class from the booksite into the project pane, so that the program can use it.
- It can be found at:  https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/WeightedQuickUnionUF.java.html 
- Compile the program.
- Go to the "Interactions" pane at the bottom of the screen.
- At the command prompt (>), type: run MaxConnectedBlackPixels bitmap_filename.bmp   
- Be sure to use the filename for the file you want to test in place of "bitmap_filename.bmp" in the line above.
- Your command to run might look like this, if you use one of my files:
+ Using Dr. Java, open my program file MaxConnectedBlackPixels.java. \ 
+ Additionally, load the WeightedQuickUnionUF.java class from the booksite into the project pane, so that the program can use it.\
+ It can be found at:  https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/WeightedQuickUnionUF.java.html \
+ Compile the program.\
+ Go to the "Interactions" pane at the bottom of the screen.\
+ At the command prompt (>), type: run MaxConnectedBlackPixels bitmap_filename.bmp \  
+ Be sure to use the filename for the file you want to test in place of "bitmap_filename.bmp" in the line above.\
+ Your command to run might look like this, if you use one of my files:\
   > run MaxConnectedBlackPixels bitmapTest1.bmp    
  
- Algorithm design:
+ Algorithm design:\
  The pixels will be stored in an array of size n x n called pixelGrid[n][n]. This 2D array will store zeros and ones that represent
- the bitmap.
- We will create a weighted union find data structure to process the points in pixelGrid[n][n] and connect them if black pixels touch.
+ the bitmap. I will create a weighted union find data structure to process the points in pixelGrid[n][n] and connect them if black pixels touch.
  The weighted union find data structure is called pixelUF[].  It is a 1D array of size n * n.  Each element in the pixelUF[n x n] array 
  represents a point on the grid (pixelGrid[n][n], or a pixel on the bitmap.  It stores information that tells us if that pixel is part 
  of a tree, and what the root of that tree is.  If the pixel is part of a tree, that means it is connected to all the other pixels in 
@@ -68,26 +66,6 @@
  The component with the most pixels pointing to it as the root will be the largest component.  After creating count[] by iterating through
  pixelUF, we will iterate through count to find the max value, which is the solution to the problem.
   
- Time analysis:
-    n * n time to build the pixelGrid
-    2 * n * (n-1) * log n time for compares to check for horizontal connections, and union functions for the pixelUF
-    2 * n * (n-1) * log n time for compares to check for vertical connections, and union functions for the pixelUF 
-    n * n * log n time to build the count[] array and use the find() function to get the root for each element in count[]
-    n * n time to iterate through count[] array to find the maxCount, which is the solution to the problem.
- 
- Adding all these times together gives: 3 * n^2 + 4 * n*(n-1) * log n. 
-   The time for this solution is quadratic.  This would not be workable for very large data sets. 
-    
- Proof:
- There are three main for loops at the heart of this algorithm to build the pixelUF.
-  (1) The algorithm iterates through pixelGrid[n][n] one row at a time. 
-  (2) The algorithm compares pixels horizontally across the row to see if any are connected.
-      It compares the pixel in row i, column j, with the pixel is row i, j+1.
-      If they are connected, they get joined by the union command in pixelsUF.
-  (3) The algorithm compares pixels vertically to see if they are connected. 
-      It compares the pixel in row i, column j, with the pixel in row i-1, column j.
-      If they are connected, they get joined by the union command in pixelsUF.
- 
  The pixels are joined together in pixelsUF by converting the 2D indexes into their 1D index equivalent.
     -We call the function union(p, q)
     -When we find horizontal connections, p = i * n + j and q = i * n + (j + 1).
