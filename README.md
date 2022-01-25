@@ -35,23 +35,23 @@
    - bitmapTest3.bmp
  
  Expected output:
- The program will print to the console the line:  
- "The size of the largest connected component of black pixels is: " \
- with the appropriate number instead of the empty blank.\ 
- The program can handle the case of zero black pixels and will print:\
- "There are no black pixels. The size of the largest connected component of black pixels is: 0"\
- Note: When I was testing the program, I had it print the bitmap and the number of components.  I have \
- decided to leave these lines in the program, but they are commented out.
+ The program will print to the console the line:    
+ "The size of the largest connected component of black pixels is: "   
+ with the appropriate number instead of the empty blank.  
+ The program can handle the case of zero black pixels and will print:  
+ "There are no black pixels. The size of the largest connected component of black pixels is: 0"  
+ Note: When I was testing the program, I had it print the bitmap and the number of components.  I have   
+ decided to leave these lines in the program, but they are commented out.  
  
- How to run this program:
- Using Dr. Java, open my program file MaxConnectedBlackPixels.java. \ 
- Additionally, load the WeightedQuickUnionUF.java class from the booksite into the project pane, so that the program can use it.\
- It can be found at:  https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/WeightedQuickUnionUF.java.html \
- Compile the program.\
- Go to the "Interactions" pane at the bottom of the screen.\
- At the command prompt (>), type: run MaxConnectedBlackPixels bitmap_filename.bmp \  
- Be sure to use the filename for the file you want to test in place of "bitmap_filename.bmp" in the line above.\
- Your command to run might look like this, if you use one of my files:\
+ How to run this program:  
+ Using Dr. Java, open my program file MaxConnectedBlackPixels.java.    
+ Additionally, load the WeightedQuickUnionUF.java class from the booksite into the project pane, so that the program can use it.  
+ It can be found at:  https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/WeightedQuickUnionUF.java.html   
+ Compile the program.  
+ Go to the "Interactions" pane at the bottom of the screen.  
+ At the command prompt (>), type: run MaxConnectedBlackPixels bitmap_filename.bmp     
+ Be sure to use the filename for the file you want to test in place of "bitmap_filename.bmp" in the line above.  
+ Your command to run might look like this, if you use one of my files:  
   > run MaxConnectedBlackPixels bitmapTest1.bmp    
  
  Algorithm design:\
