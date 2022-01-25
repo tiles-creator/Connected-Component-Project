@@ -17,9 +17,9 @@
  
  Input file information:
  The bitmap file to be analyzed will have the following format:\
-     - The first line of the file is the number n, which specifies the n x n size of the bitmap.\  
-     - The next n lines will have n elements that will be either zeros or ones separated by a space. \ 
-     - The zeros represent white pixels, the ones represent black pixels. \
+     - The first line of the file is the number n, which specifies the n x n size of the bitmap.  
+     - The next n lines will have n elements that will be either zeros or ones separated by a space. 
+     - The zeros represent white pixels, the ones represent black pixels. 
   
  Here is an example input file for a 5x5 bitmap.\
  5\
@@ -27,7 +27,7 @@
  0 0 1 1 1\
  1 0 1 1 0\
  0 1 0 1 1\
- 0 0 0 0 1\
+ 0 0 0 0 1
   
  The following files will be provided to test the program:
    - bitmapTest1.bmp
@@ -35,8 +35,8 @@
    - bitmapTest3.bmp
  
  Expected output:
- The program will print to the console the line:  "\
- The size of the largest connected component of black pixels is: " \
+ The program will print to the console the line:  
+ "The size of the largest connected component of black pixels is: " \
  with the appropriate number instead of the empty blank.\ 
  The program can handle the case of zero black pixels and will print:\
  "There are no black pixels. The size of the largest connected component of black pixels is: 0"\
