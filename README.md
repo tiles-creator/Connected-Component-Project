@@ -12,8 +12,10 @@
  component of black pixels in an n × n bitmap B[1 .. n, 1 .. n].
   
  Dependencies:  
- These are libraries from the website for this course: https://algs4.cs.princeton.edu/code/
+ The book we used for this course was: Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X. 
+ These are external libraries from the website that accompanies the book we used for this course: https://algs4.cs.princeton.edu/code/
  In.java, StdIn.java, StdOut.java, WeightedQuickUnionUF.java
+ I have included them in a separate folder in this repository called "External Libraries" for easy reference.  
  
  Input file information:
  The bitmap file to be analyzed will have the following format:\
