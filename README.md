@@ -8,7 +8,7 @@
  Assignment:  Programming Project 1
  
  Objective:
- The purpose of this program is to compute the  compute the size of the largest connected
+ The purpose of this program is to compute the size of the largest connected
  component of black pixels in an n × n bitmap B[1 .. n, 1 .. n].
   
  Dependencies:  
